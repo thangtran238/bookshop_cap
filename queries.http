@@ -1,0 +1,26 @@
+###
+# Get books
+GET http://localhost:4004/odata/v4/catalog/Books
+
+###
+#Add a book
+POST http://localhost:4004/odata/v4/catalog/Books
+Content-Type: application/json
+
+{"ID": 10, "title": "New book" }
+
+###
+# Create new order
+POST http://localhost:4004/odata/v4/catalog/Orders
+Content-Type: application/json
+
+{"books_ID":170 ,"quantity": 5 }
+
+###
+# Delete an order
+DELETE http://localhost:4004/odata/v4/catalog/Orders(62cca3f4-cd93-43e8-91b8-7853e9cac215)
+
+
+###
+# Get order info
+GET http://localhost:4004/stats/OrderInfo
