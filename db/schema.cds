@@ -23,3 +23,9 @@ entity Orders : cuid, managed {
     books    : Association to Books;
     quantity : Integer;
 }
+
+entity Users : cuid, managed {
+    name     : String;
+    username : String;
+    password : String;
+}

@@ -1,7 +1,12 @@
-const connect = require("../config/db");
+const cds = require("@sap/cds");
+
+const connection = async () => {
+  const db = await cds.connect();
+  return db;
+};
 
 module.exports = async (srv) => {
-  const db = await connect();
+  const db = await connection();
 
   srv.before("CREATE", "Orders", async (req) => {
     if (!req.data || req.data.quantity == 0) {

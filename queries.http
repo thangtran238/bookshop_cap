@@ -24,3 +24,15 @@ DELETE http://localhost:4004/odata/v4/catalog/Orders(62cca3f4-cd93-43e8-91b8-785
 ###
 # Get order info
 GET http://localhost:4004/stats/OrderInfo
+
+###
+# Sign in 
+GET http://localhost:4004/users/Users?$filter=(username eq 'teri.vo@laidon.com')
+customheader: 123123
+
+###
+# Sign up
+POST http://localhost:4004/Users/Users
+Content-Type: application/json
+
+{"name": "teri", "username": "teri.vo@laidon.com", "password" : "123123"}
